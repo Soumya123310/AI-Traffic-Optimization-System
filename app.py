@@ -16,7 +16,7 @@ st.set_page_config(
 # LOAD MODEL
 # -----------------------------
 model = joblib.load(open("traffic_model.pkl", "rb"))
-feature_columns = joblib.load("feature_columns.pkl", "rb"))
+feature_columns = joblib.load("feature_columns.pkl", "rb")
 
 # -----------------------------
 # CUSTOM CSS (FOR ATTRACTIVE UI)
@@ -139,4 +139,5 @@ if st.button("🚀 Predict Traffic & Optimize Signal"):
     st.success(f"{color} Signal Timing Optimized Successfully!")
 
     st.balloons()
+
 
