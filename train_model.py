@@ -4,7 +4,7 @@
 
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 import os
 
 from sklearn.model_selection import train_test_split
@@ -136,8 +136,9 @@ print("R2  :", round(r2_score(y_test, y_pred), 4))
 
 os.makedirs("model", exist_ok=True)
 
-pickle.dump(model, open("model/traffic_model.pkl", "wb"))
-pickle.dump(X.columns.tolist(), open("model/feature_columns.pkl", "wb"))
+joblib.dump(model, open("traffic_model.pkl", "wb"))
+joblib.dump(X.columns.tolist(), open("feature_columns.pkl", "wb"))
 
 print("\nModel & features saved successfully ✅")
 print("TRAINING PIPELINE COMPLETED 🚦")
+
