@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 
 
@@ -15,8 +15,8 @@ st.set_page_config(
 # -----------------------------
 # LOAD MODEL
 # -----------------------------
-model = pickle.load(open("model/traffic_model.pkl", "rb"))
-feature_columns = pickle.load(open("model/feature_columns.pkl", "rb"))
+model = joblib.load(open("traffic_model.pkl", "rb"))
+feature_columns = joblib.load("feature_columns.pkl", "rb"))
 
 # -----------------------------
 # CUSTOM CSS (FOR ATTRACTIVE UI)
@@ -139,3 +139,4 @@ if st.button("🚀 Predict Traffic & Optimize Signal"):
     st.success(f"{color} Signal Timing Optimized Successfully!")
 
     st.balloons()
+
